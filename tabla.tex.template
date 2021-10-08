@@ -1,0 +1,15 @@
+\documentclass{report}
+
+\begin{document}
+{\huge \textbf{SEMANA $week$}}
+$for(sessions)$
+	\section*{$sessions.name$}
+	\begin{tabular}{|l|r|r|r|r|r|}
+	\hline
+	\textbf{Ejercicio} & \textbf{Series} & \textbf{Repeticiones} & \textbf{Peso} & \textbf{RIR} & \textbf{RPE} \\ \hline
+	$for(sessions.exercises)$
+		$sessions.exercises.name$ & $sessions.exercises.series$ & $sessions.exercises.reps$ & $sessions.exercises.peso$ & $sessions.exercises.rir$ & $sessions.exercises.rpe$ \\ \hline
+	$endfor$
+	\end{tabular}
+$endfor$
+\end{document}
