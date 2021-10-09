@@ -7,4 +7,7 @@ build:
 clean:
 	rm tabla.aux tabla.log tabla.synctex.gz tabla.tex
 
+clean_all: clean
+	rm tabla.pdf
+
 rebuild: clean build
