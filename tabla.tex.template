@@ -1,21 +1,32 @@
 \documentclass{report}
-\usepackage{tabulary}
 \usepackage[a4paper, margin=1in]{geometry}
+\usepackage[table]{xcolor}
+\usepackage[spanish]{babel}
+
+\definecolor{LightGreen}{RGB}{238,247,227}
+\definecolor{white}{rgb}{255,255,255}
+\setlength\arrayrulewidth{0.7pt}
+
+\hyphenation{re-pe-ti-ci-o-nes}
+\pagestyle{empty}
+
+\newcolumntype{L}{>{\raggedright}p{0.25\textwidth}}
+\newcolumntype{R}{>{\raggedleft}p{0.15\textwidth}}
+
 
 \begin{document}
-{\huge \textbf{SEMANA $week$}}
-
+{\huge \textbf{\underline{SEMANA $week$}}}
 $for(sessions)$
 	\section*{$sessions.name$}
-	\tymin=1.5cm
-	\tymax=5cm
+	\rowcolors{1}{LightGreen}{white}
 	
-	\begin{tabulary}{1.0\linewidth}{|L|R|R|R|R|R|}
+	\begin{tabular}{|L|r|R|R|r|r|} 
 	\hline
 	\textbf{Ejercicio} & \textbf{Series} & \textbf{Repeticiones} & \textbf{Peso} & \textbf{RIR} & \textbf{RPE} \\ \hline
 	$for(sessions.exercises)$
-		$sessions.exercises.name$ & $sessions.exercises.series$ & $sessions.exercises.reps$ & $sessions.exercises.peso$ & $sessions.exercises.rir$ & $sessions.exercises.rpe$ \\ \hline
+		$it.name$ & $it.series$ & $it.reps$ & $it.peso$ & $it.rir$ & $it.rpe$ \\ \hline
 	$endfor$
-	\end{tabulary}
+	\end{tabular}
+	
 $endfor$
 \end{document}
