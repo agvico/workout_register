@@ -1,15 +1,21 @@
 \documentclass{report}
+\usepackage{tabulary}
+\usepackage[a4paper, margin=1in]{geometry}
 
 \begin{document}
 {\huge \textbf{SEMANA $week$}}
+
 $for(sessions)$
 	\section*{$sessions.name$}
-	\begin{tabular}{|l|r|r|r|r|r|}
+	\tymin=1.5cm
+	\tymax=5cm
+	
+	\begin{tabulary}{1.0\linewidth}{|L|R|R|R|R|R|}
 	\hline
 	\textbf{Ejercicio} & \textbf{Series} & \textbf{Repeticiones} & \textbf{Peso} & \textbf{RIR} & \textbf{RPE} \\ \hline
 	$for(sessions.exercises)$
 		$sessions.exercises.name$ & $sessions.exercises.series$ & $sessions.exercises.reps$ & $sessions.exercises.peso$ & $sessions.exercises.rir$ & $sessions.exercises.rpe$ \\ \hline
 	$endfor$
-	\end{tabular}
+	\end{tabulary}
 $endfor$
 \end{document}
